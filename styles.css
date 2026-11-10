@@ -39,6 +39,8 @@ a {
 
 .hero img {
     display: block;
+    width: 100%;
+    height: auto;
 }
 
 /* Supplied hero headline and call to action; no lab changes needed. */
@@ -107,6 +109,13 @@ h3 {
     border-radius: 12px;
     padding: 22px;
     box-shadow: 0 3px 10px #0a2f5c16;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
 .course-card i {
@@ -125,20 +134,51 @@ h3 {
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 7px;
+    margin-top: auto;
 }
 
 .contact {
     max-width: 1200px;
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
 }
 
 .site-footer a {
     color: #d6e9fb;
 }
 
-/* Steps 1–3: Add the CDN link and icons in index.html. */
-/* Steps 4–9: Add header and navigation Flexbox rules. */
-/* Step 10: Add responsive image sizing inside the existing .hero img rule. */
-/* Steps 11–13: Add the course-grid container, then card declarations inside the existing .course-card rule. */
-/* Step 15: Add footer layout declarations inside the existing .contact rule (Step 14 adds the PDF link in index.html). */
-/* Steps 16–19: Add the media queries at the bottom of the file; Steps 17 and 19 add declarations to existing rules. */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.site-nav {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.course-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .course-card {
+        flex-basis: 40%;
+    }
+}
+
+@media (min-width: 992px) {
+    .course-card {
+        flex-basis: 20%;
+    }
+}
